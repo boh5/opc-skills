@@ -36,10 +36,11 @@ npx skills add . --skill seo-idea-finder --agent codex --global --yes
 npx skills add . --skill '*' --agent codex --global --yes
 ```
 
-发布到 GitHub 后，源地址使用真实的 `<github-owner>/opc-skills`；本仓库不会猜测你的 GitHub 账号。替换为真实 owner 后再执行：
+从公开 GitHub 仓库直接安装：
 
 ```bash
-npx skills add <github-owner>/opc-skills --skill '*' --agent codex --global --yes
+npx skills add boh5/opc-skills --skill seo-idea-finder --agent codex --global --yes
+npx skills add boh5/opc-skills --skill '*' --agent codex --global --yes
 ```
 
 仓库同时包含 `.codex-plugin/plugin.json`，因此也可以把整套内容作为一个仅包含 Skills 的 Codex Plugin 分发。只安装 `seo-idea-finder` 不会安装或自动调用另外四个 Skill；主 Skill 会完成基础检查，完整安装后才能显式调用专家 Skill 做深度复核。

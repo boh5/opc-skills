@@ -25,7 +25,7 @@ npx skills add . --skill '*' --agent codex --yes --copy
 
 Confirm that listing discovers exactly five Skills, the selective command installs one, the wildcard command installs five, and every copied Skill retains `agents/` and `references/`.
 
-For a GitHub release, replace `<github-owner>` in the README examples with the actual owner and add real `repository` and `homepage` fields to `.codex-plugin/plugin.json`.
+For a GitHub release, confirm the README install examples and the manifest's `repository` and `homepage` fields point to the actual public repository.
 
 ## 3. Behavioral release gate
 

@@ -2,6 +2,8 @@
   "name": "opc-skills",
   "version": "0.1.0",
   "description": "Evidence-first SEO opportunity research for solo founders and small teams.",
+  "repository": "https://github.com/boh5/opc-skills",
+  "homepage": "https://github.com/boh5/opc-skills#readme",
   "author": {
     "name": "OPC Skills contributors"
   },

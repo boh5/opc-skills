@@ -38,11 +38,11 @@ Install all five Skills for the recommended full suite and independent deep audi
 npx skills add . --skill '*' --agent codex --global --yes
 ```
 
-After publication, use the real GitHub shorthand `<github-owner>/opc-skills` as the source. The owner is intentionally not guessed in this repository. For example, after substituting the real owner:
+Install directly from the public GitHub repository:
 
 ```bash
-npx skills add <github-owner>/opc-skills --skill seo-idea-finder --agent codex --global --yes
-npx skills add <github-owner>/opc-skills --skill '*' --agent codex --global --yes
+npx skills add boh5/opc-skills --skill seo-idea-finder --agent codex --global --yes
+npx skills add boh5/opc-skills --skill '*' --agent codex --global --yes
 ```
 
 The `.codex-plugin/plugin.json` manifest also makes the whole suite packageable as one skill-only Codex Plugin. Plugin packaging and Skills CLI installation are complementary distribution paths. A public Plugins Directory submission additionally needs a verified developer or business identity, policy attestations, review cases, and successful skill scans. Website, support, privacy, and terms URLs are optional for a skills-only submission; if supplied, they must be real public HTTPS URLs that match the publisher. See the [release checklist](docs/release-checklist.md).
