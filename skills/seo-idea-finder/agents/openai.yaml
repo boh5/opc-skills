@@ -1,0 +1,4 @@
+interface:
+  display_name: "SEO Idea Finder"
+  short_description: "Find and rank evidence-backed SEO ideas"
+  default_prompt: "Use $seo-idea-finder to find and rank SEO product ideas I can realistically build alone."

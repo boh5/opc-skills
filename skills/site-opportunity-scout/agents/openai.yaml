@@ -1,0 +1,4 @@
+interface:
+  display_name: "Site Opportunity Scout"
+  short_description: "Reverse-engineer SEO sites with evidence"
+  default_prompt: "Use $site-opportunity-scout to audit this site's growth, operator, traffic evidence, and reproducibility."

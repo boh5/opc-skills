@@ -1,0 +1,4 @@
+interface:
+  display_name: "SERP Competition Auditor"
+  short_description: "Audit live search competition page by page"
+  default_prompt: "Use $serp-competition-auditor to audit this query's live SERP, operators, barriers, and click opportunity."

@@ -1,0 +1,37 @@
+{
+  "name": "opc-skills",
+  "version": "0.1.0",
+  "description": "Evidence-first SEO opportunity research for solo founders and small teams.",
+  "author": {
+    "name": "OPC Skills contributors"
+  },
+  "license": "MIT",
+  "keywords": [
+    "seo",
+    "keyword-research",
+    "serp-analysis",
+    "indie-hacking",
+    "opportunity-research"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "OPC SEO Research",
+    "shortDescription": "Evidence-backed SEO research",
+    "longDescription": "Discover, validate, and prioritize SEO opportunities with separate checks for demand, SERP competition, site evidence, and solo-founder business fit.",
+    "developerName": "OPC Skills contributors",
+    "category": "Education & Research",
+    "capabilities": [
+      "Web research",
+      "SEO analysis",
+      "Opportunity prioritization"
+    ],
+    "defaultPrompt": [
+      "Find and rank low-competition SEO ideas for a solo founder.",
+      "Audit a keyword's demand, SERP competition, and business fit.",
+      "Reverse-engineer small sites to find reproducible SEO opportunities."
+    ],
+    "brandColor": "#0F766E",
+    "composerIcon": "./assets/composer-icon.svg",
+    "logo": "./assets/logo.svg"
+  }
+}

@@ -1,0 +1,7 @@
+.DS_Store
+
+# Local Skills CLI installations
+.agents/
+
+research/last30days/
+evals/runs/

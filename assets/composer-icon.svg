@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">SEO evidence search</title>
+  <desc id="desc">A search lens with an upward line.</desc>
+  <rect width="128" height="128" rx="28" fill="#0F766E"/>
+  <circle cx="53" cy="52" r="29" fill="#F8FAFC" stroke="#99F6E4" stroke-width="7"/>
+  <path d="M32 62L44 49L54 57L73 36" fill="none" stroke="#0F766E" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M63 36H73V46" fill="none" stroke="#0F766E" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M75 75L103 103" fill="none" stroke="#F59E0B" stroke-width="12" stroke-linecap="round"/>
+</svg>

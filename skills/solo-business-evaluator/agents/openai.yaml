@@ -1,0 +1,4 @@
+interface:
+  display_name: "Solo Business Evaluator"
+  short_description: "Test SEO ideas for realistic solo economics"
+  default_prompt: "Use $solo-business-evaluator to decide whether this SEO idea is worth building and operating alone."

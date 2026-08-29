@@ -1,0 +1,4 @@
+interface:
+  display_name: "Keyword Demand Validator"
+  short_description: "Validate search demand without metric drift"
+  default_prompt: "Use $keyword-demand-validator to validate this query's demand, intent, trend, and click potential."
