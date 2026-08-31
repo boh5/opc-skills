@@ -12,6 +12,10 @@
 | Date/time | |
 | Browser/provider and personalization state | |
 | Provider data period/refresh time | |
+| Research depth and planned/used workload | |
+| Collection stop reason | |
+| Extraction method | |
+| Authorized artifact, if any | |
 | Proposed entrant page | |
 
 ## SERP features
@@ -41,5 +45,16 @@ Use visible order rather than claiming a stable rank. Record `unknown` instead o
 | Brand/platform dominance | | |
 | Click opportunity | | |
 | Entrant's material advantage | | |
+
+## Feature-parity and entry-thesis check
+
+| Claimed advantage | Closest current alternative | Observed capability | Parity / partial gap / material gap / unknown | Evidence record | Decision impact |
+| --- | --- | --- | --- | --- | --- |
+
+If the current alternative already provides the feature, invalidate that advantage rather than rejecting the opportunity automatically. Record any surviving product, segment, data, workflow, distribution, trust, support, speed, or economics edge and test search access separately.
+
+## Replayability record
+
+For each decisive observation, preserve source URL or provider record, evidence class, `observed_at`, provider `data_period` and refresh time, market/language/device, personalization state, extraction method, exact claim supported, and limitation. A bare search URL does not preserve the observed result composition.
 
 Finish with the strongest opening, strongest barrier, minimum entry requirement, and falsification condition. Do not average the dimensions into a precise probability of ranking. If only one manual sample exists, cap the verdict at `Testable` and state what repeated evidence would be needed for a stronger claim.

@@ -22,6 +22,7 @@ Rate each as `strong`, `mixed`, `weak`, or `unknown` and cite the decisive evide
 | Dimension | Strong evidence | Weak evidence |
 | --- | --- | --- |
 | User job | Repeated, costly or valuable task; product completes it | Vague interest; content already completes the task |
+| Entry thesis | Closest current alternatives were checked and a material product, segment, data, workflow, distribution, trust, support, speed, or economics edge survives | Competitors are rejected mechanically, or the claimed feature already exists and no other edge is identified |
 | Demand | Current market-specific evidence across compatible sources | Social excitement or stale/unscoped volume only |
 | SERP opening | Page-level gap the proposed product can materially fill | Low domain metric or low KD without page audit |
 | Click necessity | Interaction, fresh data, workflow, transaction, or primary source is needed | AI/snippet/official result completes the task |
@@ -40,3 +41,7 @@ Rate each as `strong`, `mixed`, `weak`, or `unknown` and cite the decisive evide
 - `Do not build` names the structural blocker and avoids disguising rejection as an endless validation plan.
 
 If two ideas are close, prefer the one with faster evidence, lower recurring operations, more reusable assets, and a clearer stop line—not the one with the largest modeled traffic number.
+
+Existing competitors are evidence to analyze, not an automatic veto. If parity testing disproves one differentiator, remove that differentiator and reassess the remaining entry thesis. Reject the current plan only when no material advantage or accessible acquisition path survives, or another hard gate applies.
+
+Every numerical stop threshold must state its basis: observed baseline, sample-size/statistical goal, experiment cost and minimum acceptable return, or user-defined target. Without one, require a calibration period or formula instead of a made-up precise cutoff.

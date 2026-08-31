@@ -33,6 +33,19 @@ Re-check provider documentation when the interface or methodology may have chang
 - Do not infer missing precision from chart pixels, snippets, cached cards, or rounded UI values.
 - Record collection time, underlying data period, and provider refresh time as different fields. When a decisive volatile value cannot be refreshed, classify it as historical or unknown rather than current.
 
+## Replayability rules
+
+For every decisive numeric observation, preserve:
+
+- source URL or record identifier;
+- metric name and evidence class;
+- `observed_at`, provider `data_period`, and refresh time when available;
+- geography, language, device, database, and match scope;
+- extraction method, including export, API field, UI transcription, or first-party report;
+- exact claim the observation supports and its limitation.
+
+A bare live URL is a navigation pointer, not a preserved measurement. In particular, a Google Trends URL alone does not preserve the extracted values or guarantee that a later viewer receives the same sample. Record the term/topic choice, search type, category, geography, time range, comparison set, values used, and collection time in the answer or in an explicitly authorized dated artifact.
+
 ## Primary methodology references
 
 - [Google Trends data FAQ](https://support.google.com/trends/answer/4365533?hl=en)

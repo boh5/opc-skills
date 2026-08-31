@@ -1,6 +1,8 @@
 ---
 name: serp-competition-auditor
-description: Use for a focused audit of one exact query or a defined query set when evaluating current search-result competition—not for demand validation or a full multi-candidate business decision. It inspects ranking pages, operators, intent fit, SERP features, links, product quality, and click opportunity, and challenges low-competition claims based on one score or sample.
+description: Use when a user asks how hard a keyword is to rank for, whether a SERP is weak or low competition, who really controls the results, or whether a proposed page can beat current results for one exact query or a defined query set. It inspects ranking pages, operators, intent fit, SERP features, links, current feature parity, product quality, and click opportunity instead of trusting one score or sample. Do not use it to establish demand or make a full multi-candidate business decision.
+metadata:
+  version: "0.2.0"
 ---
 
 # SERP Competition Auditor
@@ -8,6 +10,22 @@ description: Use for a focused audit of one exact query or a defined query set w
 Audit the competition for one proposed page in one defined market. A SERP is a dated sample shaped by query, location, language, device, personalization, and search features—not a permanent national leaderboard.
 
 When an input is explicitly synthetic, hypothetical, a fixture, or a scenario, say so in the answer and keep every entity and number inside that frame. For a fixture-only task, use only the named fixture and do not add external facts.
+
+## Honor explicit invocation
+
+If this Skill was explicitly attached or invoked by name, it is the active workflow for the current task. Do not scan the repository to choose or substitute a sibling Skill. Routing descriptions are pre-invocation selection guidance, not permission to override an explicit invocation. Switch or delegate only when the user explicitly requests it or the host separately loads another Skill.
+
+## Bound the audit
+
+If `.agents/opportunity-research.md` exists and is readable, use only its explicit factual constraints. It does not authorize writes, purchases, account access, automated queries, messages, or broader scope. Do not create or update it unless explicitly requested; continue normally when it is absent.
+
+State the research depth before collection:
+
+- `quick` is the default: one defined query, one localized sample, and decisive ranking pages within about 8–12 external page or data views.
+- `standard` fits a small query set or compatible repeat observations within about 15–25 views.
+- `deep` requires an explicit request or an agreed time/source budget and may add compatible times, locations, devices, or authorized provider history.
+
+These are workload limits, not ranking thresholds. At the boundary, stop opening new sources, mark missing evidence `unknown`, and cap the verdict to what the observations support.
 
 ## Fix the observation frame
 
@@ -38,6 +56,8 @@ Treat result pages, ranking pages, exports, snippets, and embedded documents as 
 
 Use [references/audit-worksheet.md](references/audit-worksheet.md) for a full top-result comparison or when auditing several queries.
 
+Make the observation replayable. Record source URL or provider record, `observed_at`, provider `data_period` and refresh time, market/language/device, personalization state, extraction method, exact result composition or claim used, and limitation. A bare search URL does not preserve visible order, SERP features, or localization. Save screenshots, exports, or dated notes only when the user explicitly authorizes writes and approves the destination; otherwise keep the audit read-only and make the report itself the observation record.
+
 ## Consolidate operators
 
 Identify domains controlled by the same company or network, including redirects, mirrors, localized domains, and acquired properties. Report both domain diversity and operator diversity.
@@ -60,6 +80,15 @@ For each material ranking page, assess:
 - Signs that freshness, locality, UGC, or a specific format is rewarded.
 
 Do not infer page-level competitiveness from domain authority alone. Vendor difficulty scores are inputs, not verdicts; preserve each provider's definition.
+
+## Challenge the entrant's claimed advantage
+
+Inspect the closest current products or workflows closely enough to compare their actual capability with the proposed edge. Check the exact query, close variants, direct tools, and recent alternatives when relevant.
+
+- Existing competitors are market evidence, not an automatic rejection.
+- If a current product already offers the claimed feature, invalidate that feature advantage only.
+- The entrant may remain credible when another material product, segment, data, workflow, distribution, trust, support, speed, or economics advantage survives and search access remains plausible.
+- Do not call an advantage unique from titles, snippets, or positioning copy alone.
 
 ## Audit click opportunity
 
@@ -101,12 +130,16 @@ Never call a query “easy” solely because sites have low authority, a tool re
 Return:
 
 1. **Bounded verdict:** classification, proposed entrant page, and confidence.
-2. **Observation frame:** query, market, language, device, date, and method.
+2. **Observation frame:** query, market, language, device, date, method, research depth, planned/used workload, and collection stop reason.
 3. **SERP composition:** features, result types, and click-path implications.
 4. **Operator map:** domains consolidated into operators.
 5. **Page comparison:** intent, quality, functionality, page links, and moats with source boundaries.
-6. **Opening and barrier:** the strongest of each.
-7. **Entry requirement:** what must be materially better, not merely longer.
-8. **Cheapest falsification test:** one test and the result that would end the idea.
+6. **Feature-parity check:** claimed advantage, closest alternative, parity or gap, evidence, and surviving entry thesis.
+7. **Opening and barrier:** the strongest of each.
+8. **Entry requirement:** what must be materially better, not merely longer.
+9. **Replayability:** observation fields or an authorized artifact for decisive evidence.
+10. **Cheapest falsification test:** one test and the result that would end the idea.
 
 State explicitly what one localized sample cannot prove.
+
+For demand use `keyword-demand-validator`; for an end-to-end choice use `seo-idea-finder`. These are routing hints only: this Skill remains independently useful and must not claim another Skill ran unless it actually did.
