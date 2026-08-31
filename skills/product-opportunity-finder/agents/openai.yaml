@@ -1,0 +1,4 @@
+interface:
+  display_name: "Product Opportunity Finder"
+  short_description: "Find differentiated product opportunities"
+  default_prompt: "Use $product-opportunity-finder to find and rank evidence-backed product opportunities in this direction."

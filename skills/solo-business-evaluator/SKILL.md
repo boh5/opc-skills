@@ -139,3 +139,5 @@ Return:
 9. **Defensibility:** compounding advantage and likely imitation response.
 10. **Risk register:** severity, likelihood, mitigation, and evidence confidence.
 11. **Experiment and stop line:** measurable, dated, and explicit about the threshold basis.
+
+For broad market or non-search product discovery use `product-opportunity-finder`; for query-, SERP-, or organic-search-led idea discovery use `seo-idea-finder`; for a site, demand, or SERP-only question use the matching specialist. These are routing hints only: this Skill remains independently useful and must not claim another Skill ran unless it actually did.

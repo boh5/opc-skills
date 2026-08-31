@@ -123,3 +123,5 @@ Return:
 9. **Next use:** candidate to validate, benchmark only, or reject—with one cheapest falsification test.
 
 Do not make a query-level low-competition call without a separate live SERP audit.
+
+For broad market, differentiation, or success-path-derived product discovery use `product-opportunity-finder`; for query-, SERP-, or organic-search-led idea discovery use `seo-idea-finder`; for one query's live competition use `serp-competition-auditor`. These are routing hints only: this Skill must remain useful when installed alone, and it must not claim another Skill ran unless that actually occurred.

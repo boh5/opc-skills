@@ -107,3 +107,5 @@ Return:
 8. **Decision impact:** what this evidence supports, what it does not support, and the next cheapest falsification test.
 
 Do not call a niche low competition; this Skill validates demand. Use `$serp-competition-auditor` for attainability.
+
+For broad market, differentiation, or non-search product discovery use `product-opportunity-finder`; for query-, SERP-, or organic-search-led opportunity discovery use `seo-idea-finder`; for current query-level competition use `serp-competition-auditor`. These are routing hints only: this Skill remains self-contained and must not claim another Skill ran unless it actually did.

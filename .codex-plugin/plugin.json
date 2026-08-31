@@ -1,7 +1,7 @@
 {
   "name": "opc-skills",
-  "version": "0.1.0",
-  "description": "Evidence-first SEO opportunity research for solo founders and small teams.",
+  "version": "0.4.0",
+  "description": "Evidence-first product and SEO opportunity research for solo founders and small teams.",
   "repository": "https://github.com/boh5/opc-skills",
   "homepage": "https://github.com/boh5/opc-skills#readme",
   "author": {
@@ -10,6 +10,8 @@
   "license": "MIT",
   "keywords": [
     "seo",
+    "product-discovery",
+    "market-research",
     "keyword-research",
     "serp-analysis",
     "indie-hacking",
@@ -17,20 +19,21 @@
   ],
   "skills": "./skills/",
   "interface": {
-    "displayName": "OPC SEO Research",
-    "shortDescription": "Evidence-backed SEO research",
-    "longDescription": "Discover, validate, and prioritize SEO opportunities with separate checks for demand, SERP competition, site evidence, and solo-founder business fit.",
+    "displayName": "OPC Opportunity Research",
+    "shortDescription": "Evidence-backed opportunities",
+    "longDescription": "Discover differentiated products from current social, community, product, and market signals, with a specialized SEO suite for search-led opportunities.",
     "developerName": "OPC Skills contributors",
     "category": "Education & Research",
     "capabilities": [
       "Web research",
+      "Product opportunity discovery",
       "SEO analysis",
       "Opportunity prioritization"
     ],
     "defaultPrompt": [
-      "Find and rank low-competition SEO ideas for a solo founder.",
-      "Audit a keyword's demand, SERP competition, and business fit.",
-      "Reverse-engineer small sites to find reproducible SEO opportunities."
+      "Find differentiated product opportunities in a broad market or technology direction.",
+      "Find and rank source-backed SEO product ideas for a solo founder.",
+      "Audit a keyword, SERP, site, or defined SEO business opportunity."
     ],
     "brandColor": "#0F766E",
     "composerIcon": "./assets/composer-icon.svg",
