@@ -2,7 +2,7 @@
 name: ai-tech-topic-scout
 description: Find and verify current AI and technology news, noteworthy demos, active discussions, and concrete X conversation opportunities for a content account. Return a sourced editorial topic pack with angles, discussion evidence, and freshness checks. Use for news/discussion discovery, topic selection, reply-opportunity discovery, or a recurring content radar; not product opportunities, SEO research, or finished social copy.
 metadata:
-  version: "0.6.0"
+  version: "0.7.0"
 ---
 
 # AI & Tech Topic Scout
@@ -52,7 +52,9 @@ Apply two separate gates:
 
 **Editorial gate:** What can this reader understand, use, notice, or meaningfully discuss after reading it? Put that concrete payoff in `audience_value` and its supported explanation in `angle`. Prefer a new capability, observable surprise, meaningful cost/access change, consequential limitation, well-supported contrast, or substantive disagreement. A recent official source and a feature list do not establish audience value. Apply the audience-fit checks in [sourcing.md](references/sourcing.md); do not rescue a weak candidate with hype or invented consequences.
 
-For a content-growth brief, collect the question or tension people actually care about, not just product facts. An angle must add something beyond a generic usage idea, “humans still need to check” or “I would test it first”. Prefer a concrete insight, useful answer, revealing detail or meaningful difference in priorities. Evidence makes the claim usable; it does not make the angle interesting. Compare a few distinct contributions before recommending one, without manufacturing disagreement or a viral score.
+For this account's open content-growth brief, prioritize **sharp judgments, informative facts and worthwhile discoveries** (暴论、事实、发现). Bring back material that can support at least one: a specific claim worth challenging and its counterexample or tradeoff; a result, comparison or condition that changes readers' understanding; or an overlooked detail, useful application or connection between sources. A plain factual answer to a real reader question can qualify without sensational framing. These are content priorities, not three mandatory sections, a quota or a requirement to select a fight. Explicit news-summary or other narrower requests retain their scope.
+
+In each selected topic's existing angle/evidence fields, make the core point and its support recoverable, including any condition that changes it. Do not merely hand off a launch recap and expect the writer to invent an interesting claim. Mark a proposed connection or use as inference when it has not been demonstrated; preserve who actually made a finding and never claim nobody else noticed it without evidence. A generic usage idea, “humans still need to check” or “I would test it first” does not add enough on its own. Compare distinct contributions without manufacturing a viral score; if none qualifies, return the appropriate zero-selection or incomplete status rather than making the wording louder.
 
 Include contrarian candidates when a specific claim or common practice has a supported counterexample, overlooked condition or meaningful tradeoff. Preserve both the claim being challenged and the evidence behind the alternative; treat the editorial conclusion as an inference. Do not invent a consensus, the user's personal belief, or observed controversy. An interesting counterargument can have discussion potential without qualifying as an observed conversation.
 

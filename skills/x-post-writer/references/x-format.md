@@ -46,7 +46,7 @@ Do not assume that moving external links into replies improves reach. Choose lin
 
 ## Visuals
 
-Deliver an actual image by default, following [images.md](images.md): use a suitable supplied or reusable asset, or have the running Agent generate one. Include alt text and provenance outside the post body. A link-only source remains useful attribution but does not complete the required accompanying image. Only an explicit text-only instruction waives that requirement; otherwise report unavailable image work as incomplete. Text-length validation does not validate the image or upload it to X.
+Choose imagery by its contribution to the post, following [images.md](images.md). Text alone is a complete deliverable when an image adds nothing useful. When an image is requested or selected, deliver an inspected actual asset, with alt text and provenance outside the post body; a prompt or link-only source does not complete that work. Distinguish an editorial choice to omit imagery from an unresolved image request. Text-length validation does not validate an image or upload it to X.
 
 ## Automation is a separate capability
 
