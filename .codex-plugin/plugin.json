@@ -1,7 +1,7 @@
 {
   "name": "opc-skills",
-  "version": "0.4.0",
-  "description": "Evidence-first product and SEO opportunity research for solo founders and small teams.",
+  "version": "0.5.0",
+  "description": "Evidence-first product and SEO research, AI/tech topic discovery, and X drafting for solo operators.",
   "repository": "https://github.com/boh5/opc-skills",
   "homepage": "https://github.com/boh5/opc-skills#readme",
   "author": {
@@ -15,25 +15,30 @@
     "keyword-research",
     "serp-analysis",
     "indie-hacking",
-    "opportunity-research"
+    "opportunity-research",
+    "ai-news",
+    "editorial-research",
+    "x-writing"
   ],
   "skills": "./skills/",
   "interface": {
-    "displayName": "OPC Opportunity Research",
-    "shortDescription": "Evidence-backed opportunities",
-    "longDescription": "Discover differentiated products from current social, community, product, and market signals, with a specialized SEO suite for search-led opportunities.",
+    "displayName": "OPC Skills",
+    "shortDescription": "Research and sourced X drafts",
+    "longDescription": "Discover product and SEO opportunities, or find source-backed AI/technology topics and turn them into reviewable X posts. Editorial work does not require building a product or operating an account.",
     "developerName": "OPC Skills contributors",
     "category": "Education & Research",
     "capabilities": [
       "Web research",
       "Product opportunity discovery",
       "SEO analysis",
-      "Opportunity prioritization"
+      "Opportunity prioritization",
+      "AI and technology topic discovery",
+      "Source-backed X drafting"
     ],
     "defaultPrompt": [
       "Find differentiated product opportunities in a broad market or technology direction.",
       "Find and rank source-backed SEO product ideas for a solo founder.",
-      "Audit a keyword, SERP, site, or defined SEO business opportunity."
+      "Find current AI and technology topics and turn the best ones into sourced X drafts."
     ],
     "brandColor": "#0F766E",
     "composerIcon": "./assets/composer-icon.svg",

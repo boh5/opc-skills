@@ -1,0 +1,19 @@
+{
+  "schema_version": "opc-x-drafts/v1",
+  "run_id": "synthetic-editorial-20260916-01",
+  "mode": "fixture",
+  "as_of": "2026-09-16T10:00:00+08:00",
+  "drafts": [
+    {
+      "topic_id": "cedar-preview", "format": "reply", "status": "draft",
+      "reply_url": "https://x.com/synthetic_cedar/status/1234567890123456789",
+      "source_urls": ["https://example.invalid/cedar/preview", "https://x.com/synthetic_cedar/status/1234567890123456789"],
+      "posts": ["这里最容易被“免费”两个字带偏：目前其实只限加拿大受邀团队，每天 20 次。真正值得观察的是，这种邀请制预览是在降低试用门槛，还是只是换了一种筛选方式。"]
+    },
+    {
+      "topic_id": "lumen-demo", "format": "single", "status": "draft",
+      "source_urls": ["https://example.invalid/lumen/demo"],
+      "posts": ["Lumen 作者宣布了一个“照片变短动画”的演示。\n有意思，但公告没交代生成耗时，也没提供失败样例。先别把演示当稳定性结论；真正值得追问的是：普通人用起来能否同样顺利？\nhttps://example.invalid/lumen/demo"]
+    }
+  ]
+}

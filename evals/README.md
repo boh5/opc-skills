@@ -15,15 +15,28 @@ Each line in `cases.jsonl` contains:
 - Optional `pair`: a counterfactual case that should apply the same rule to changed labels or facts.
 - Optional `execution_budget`: a case-level maximum such as `max_external_page_or_data_views`. Count each distinct query inside a batch as one SERP observation, then count opened source pages, provider reports, product workflows, and material records separately; navigation and local Skill/reference reads do not consume a view.
 
-`routing.jsonl` is separate. It tests metadata-only selection from the six frontmatter descriptions and includes prompts that should select no Skill.
+`routing.jsonl` is separate. It tests metadata-only selection from the eight frontmatter descriptions and includes prompts that should select no Skill. For a combined discovery-to-X request, select `x-post-writer` as the entrypoint; its permitted internal use of the scout is not a routing collision.
 
 ## Run protocol
+
+### X writer maintenance acceptance
+
+After every change to `x-post-writer` or its supporting workflow, proactively run a fresh independent subagent trial before reporting the revision ready. Do not wait for the user to request the test. Start without inherited conversation history; provide only the realistic task, Skill/dependency entrypoints, necessary raw inputs and tool/output permissions. Do not provide the diagnosis, proposed fix, previous drafts, desired answer or evaluation criteria to the writer. An open-action test must not prescribe a new post or a reply.
+
+Preserve and show the first completed output, including actual imagery unless the task explicitly waives it. Do not coach the running writer or silently replace its result with a parent rewrite. Report defects separately; after any further Skill change, use another fresh agent. If execution is blocked, name the concrete blocker instead of claiming a completed behavioral test. This maintenance trial complements the paired evaluations below; a parser pass alone is not writing-quality acceptance.
+
+Match trial permissions to the real task. Read-only inspection of an existing signed-in Chrome X session is allowed when authorized; prohibit posting, replying, liking, following and other writes explicitly rather than ambiguously banning all “account use”. Do not count a test that artificially removed the available reading surface as validation of live reply selection. Use a separate clean reader to assess the finished text without the author's reasoning or revision history, and record its concrete criticisms separately from the raw output.
+
+For conversational Chinese, inspect the exact wording rather than treating a reader model's “natural, 4/4” as acceptance. Keep user-rejected runs rejected even if a model approved them. Report what remains awkward without rewriting the preserved writer output or declaring it publishable solely from model agreement.
+
+The writer's built-in single language-editing delegation is part of its original run, before the first completed output. Keep that editor's task and result in the trace too; it must receive no evaluation feedback or inherited conversation. The external evaluator must not become that editor, coach it, or request another pass. If delegation is unavailable, record the local fallback without claiming an isolated editor was tested.
 
 For each behavior case:
 
 1. Start two fresh sessions with the same model, reasoning setting, tool permissions, and prompt.
 2. Run one without the target Skill and one with the target Skill. Do not disclose which output is which to the reviewer.
 3. For fixture cases, provide only the named fixture and prohibit external lookup. State clearly that the fixture is synthetic.
+   Do not coach the running writer, send reviewer corrections back, or replace its first completed output with a guided revision. Preserve the original output and record defects separately. If the Skill changes afterward, start a fresh run and identify the new version. The writer's own editing inside its original run remains part of the behavior under test.
 4. Save the full transcript, final answer, tool calls, visited URLs, write actions, and errors. Final text alone cannot prove tool-policy compliance.
 5. Check `tool_policy`, every `must_pass`, and every `critical_failures` item before assigning rubric scores.
 6. When `execution_budget` exists, count the full trace—not merely tool-call containers—and fail the case if collection exceeds it, continues after the declared boundary, or reports opened/tested resources absent from the trace.
@@ -34,10 +47,42 @@ For each behavior case:
 
 Store temporary outputs under `evals/runs/`; that directory is ignored. Do not commit credentials, private analytics, licensed exports, or tool traces containing private data.
 
+## Editorial deterministic checks
+
+From the repository root, with local dependency installation permitted:
+
+```bash
+uv run evals/test_editorial.py
+npm ci --prefix skills/x-post-writer/scripts --ignore-scripts --no-audit --no-fund
+node --test evals/x-post-check.test.mjs
+uv run skills/ai-tech-topic-scout/scripts/validate_pack.py evals/fixtures/ai-tech-topic-pack.json
+node skills/x-post-writer/scripts/check-post.mjs --file evals/fixtures/x-drafts.json
+```
+
+The Python runner declares its dependency through inline `uv` metadata. Runtime helpers only read their inputs; initial dependency setup may download packages. Use an authorized temporary cache if the default cache is not writable; do not change ownership of a user's cache as a workaround.
+
+For installation-runtime checks, first inspect a fresh isolated install from a clean source tree and confirm it contains no `node_modules`. Then install its locked dependencies with `npm ci --ignore-scripts --no-audit --no-fund` and run the helpers from that installed location. Do not count dependencies silently copied from a development checkout as an isolated setup; the observed Skills CLI `1.5.26` local-copy path does not honor `.gitignore` for this purpose. See the distribution checks in `docs/release-checklist.md`.
+
+`editorial-source-records.md` is raw synthetic evidence for behavioral evaluation. `ai-tech-topic-pack.json` and `x-drafts.json` are an interoperability example, not blind evaluator answers or actual news. The deterministic tests cover format/schema boundaries, state, references, deduplication, timestamps, media rights flags, and weighted text length. They do not execute a language model, prove source truth, measure routing quality, or replace the paired release protocol above. Do not give the model the sample pack/drafts when evaluating raw discovery quality.
+
+`editorial-audience-records.md` adds raw synthetic sources for audience-fit and event-versus-release-date cases. Its counterfactuals vary record order and audience so the evaluator must not learn a brand/category blacklist. The completion cases distinguish small completed scopes from unfinished required lanes, optional missing metrics, and partial runs with no ready topic. Writer cases also cover explicitly requested source rewrites, supplied/fixture provenance versus completion, and final-text/check-result consistency.
+
+For exact-length claims, compare the complete delivered copy with the successful helper input, including ordinary URLs, line breaks and numbering. Preserve that input and result in the authorized evaluation trace; a final assertion of a number, or a parser result with no input, is insufficient evidence. A blocked replay stays unverified and must not be routed around. Catalog integrity tests check that these cases are wired correctly; they do not execute them or prove a behavioral improvement.
+
+Editorial cases use the shared `evidence_integrity` / `metric_scope` dimensions plus `editorial_workflow` and `editorial_delivery`. Product quotas, demand validation, functional-alternative audits, and build recommendations are not editorial requirements. A bounded successful scan may return zero items; a source outage must instead be disclosed as blocked or partial. Drafting never counts as publishing.
+
+`editorial-account-records.md` supplies fictional account preferences, history, sources, reader questions and feedback for continuity cases. Test a useful follow-up, semantic duplicates, optional-history gaps and unequal metric windows separately. Account context must not invent personal experience, turn cold start into mandatory replying, or expand the Skill into scheduling/publishing. Structured ongoing-run results wrap the existing draft batch; only that batch is input to the length helper. Added catalog cases are not evidence of a completed paired behavioral evaluation.
+
+`editorial-voice-records.md` tests peer commentary and an explicit how-to brief using the same fictional product. Judge whether the wording fits each request and preserves the evidence; do not grade by banning individual phrases or claiming an AI-detector score. Commentary should carry a specific judgment without a generic lecture, while requested instructions should remain actionable. A better-looking single sample is not proof of a stable improvement over baseline.
+
+`editorial-owner-records.md` holds one source constant while two cases change the owner's priorities. Judge whether the resulting choices actually follow those priorities, not whether “I” appears or a favorite phrase is repeated. Additional cases distinguish a supplied first-person experience from a proposed preference, and preserve explicitly requested neutral reporting. These text-only cases isolate voice; they do not validate the image workflow. Preserve uncoached outputs, including failures.
+
+Image cases distinguish an actual delivered asset from a prompt, an article link or invented completion. `fixture_with_native_image` permits only supplied evidence, local Skill/reference and image reads, the host's native image generator, the existing text checker and authorized temporary artifacts; it does not permit browsing, external API setup or publication. Inspect the returned image and actual tool trace. Text-only cases explicitly waive imagery; no-tools cases without that waiver should retain usable copy and disclose blocked media. Existing text checks do not establish image readiness, and a visual or length-check success does not prove X upload compatibility.
+
 ## Release gate
 
 - Every Skill and the Plugin pass their structural validators.
-- The Skills CLI discovers exactly six intended Skills; selective and wildcard installation preserve all files.
+- The Skills CLI discovers exactly eight intended Skills; selective, paired, and wildcard installation preserve Skill-local instructions, references, scripts, and lockfiles, without vendoring `node_modules`.
 - Every `must_pass` behavior passes and no critical failure occurs in any run.
 - Every applicable rubric dimension scores at least 3/4.
 - Evidence integrity and metric/scope discipline score 4/4 whenever numeric evidence affects the decision.
@@ -49,4 +94,4 @@ Store temporary outputs under `evals/runs/`; that directory is ignored. Do not c
 - Idea-finding cases choose the correct primary discovery mode and data spine, trace every candidate to an observed source record, apply the cheap gate and semantic current-alternative audit before expensive validation, rerun the audit after a material reframe, replenish rejected finalists from new evidence, stop ordinary discovery once the requested qualifying count passes or explicitly report a genuine blocker, identify whether provider/first-party or public-web data was used, and present products and plain-language actions before internal research mechanics.
 - Broad product-opportunity cases use relevant current social, community, product or technical, and market or launch lanes; do not reward obscurity; treat competitors as evidence rather than a veto; and freshly audit any opportunity derived from a success path instead of copying the source product.
 
-The cases remain a maintained benchmark, not proof that rankings or business outcomes are guaranteed.
+The cases remain a maintained benchmark, not proof that rankings, business outcomes, or follower growth are guaranteed. Record explicitly which deterministic, installation, live, and independent behavioral checks actually ran; unrun release gates remain unverified.

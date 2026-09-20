@@ -5,3 +5,7 @@
 
 research/last30days/
 evals/runs/
+
+# Local validation dependencies and bytecode
+node_modules/
+__pycache__/

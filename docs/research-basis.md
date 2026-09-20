@@ -1,6 +1,6 @@
-# Research basis for v0.4
+# Research basis
 
-Last reviewed: 2026-08-30.
+Product/SEO material last reviewed: 2026-08-30. Editorial additions and X rules reviewed: 2026-09-16. Component versions are in `VERSIONS.md`; a review date is not a release receipt.
 
 This document records why the Skills contain particular guardrails. It is not a frozen SEO playbook: search behavior, product metrics, policies, and SERPs are time-sensitive and should be checked again during each live study.
 
@@ -11,7 +11,23 @@ This document records why the Skills contain particular guardrails. It is not a 
 - [Vercel Labs Skills CLI](https://github.com/vercel-labs/skills) discovers the flat `skills/<name>/SKILL.md` layout and supports listing or selectively installing several Skills from one repository.
 - Popular public collections—including [Anthropic Skills](https://github.com/anthropics/skills), [OpenAI Plugins](https://github.com/openai/plugins), and [Superpowers](https://github.com/obra/superpowers)—use independent Skill directories and reserve supporting files for material that belongs to one Skill.
 
-These sources support the v0.4 layout: six sibling Skills inside one skill-only Plugin, with no fake wrapper Skill and no mandatory npm package.
+The v0.5 layout has eight sibling Skills inside one skill-only Plugin, with no fake wrapper Skill or root npm application. The optional X text validator has Skill-local locked npm dependencies.
+
+## AI/technology discovery and X editing
+
+- [Humanizer 3.0.0 by Siqi Chen](https://github.com/blader/humanizer/blob/9862685f575c65a8247f90369951df1b3416e3d6/SKILL.md), reviewed 2026-09-19, supplies the writer's post-draft editing pass. Its original Skill is bundled unchanged as `x-post-writer/references/humanizer.md`, with its MIT copyright and license alongside it. OPC uses embedded mode, applies language-appropriate patterns to Chinese, and retains the writer's source, attribution, caveat and final-length requirements. No separate Humanizer installation is required. Pattern cleanup is not evidence of detector evasion or improved engagement.
+- [X AI Topic Selector](https://github.com/vigorX777/x-ai-topic-selector/blob/main/SKILL.md) separates finding posts from recommending topics. Its inspected entrypoint uses interactive parameter collection, Chrome login, persisted settings, and optional model-provider credentials. OPC adopts the discovery/editorial separation, not its scripts, login workflow, mandatory questionnaire, or credential storage.
+- [AI Daily Digest](https://github.com/vigorX777/ai-daily-digest/blob/main/README.md) documents feed collection, time filtering, ranking, and synthesis. OPC uses complementary source lanes and preserves source dates; the collection's source count, scores, and trend summaries are not evidence of completeness, popularity, or growth.
+- [X character-counting documentation](https://docs.x.com/fundamentals/counting-characters) recommends [twitter-text](https://github.com/twitter/twitter-text) for weighted counting, including CJK, recognized emoji sequences, URL transformation, and NFC normalization. The local helper pins `twitter-text@3.1.0`; it validates standard post text, not account access, facts, media, new emoji, or eventual platform acceptance.
+- [X automation rules](https://help.x.com/en/rules-and-policies/x-automation), updated April 2026, distinguish permitted information broadcasts from prohibited website scripting, automated trending-topic posting, and unsolicited automated interaction. [Authenticity rules](https://help.x.com/en/rules-and-policies/authenticity) also constrain spam and inauthentic amplification. OPC's workflow ends at drafts; research, writing, and a recurring invocation do not grant account-action permission.
+
+The resulting contract is `ai-tech-topic-scout` → `opc-topic-pack/v1` → `x-post-writer`. The scout is independently useful. The writer can edit sufficient supplied evidence alone and loads the scout for missing current material when both are available. This is an explicit workflow dependency, not an assumed CLI dependency resolver or a fake MCP dependency. It introduces no paid data provider, background service, global installation, or posting client.
+
+Editorial choices are separate from product/SEO research: novelty, practical impact, a meaningful demonstration, or a sourced disagreement can justify a topic without proving paying demand. Popularity and evidence quality are separate. The scan is bounded, counts are maxima, duplicated events are merged, old reposts do not become news, and unknown engagement stays unknown. A source-backed interesting angle does not require the account owner to build or test a product.
+
+The caller-supplied cold-start case review on 2026-09-19 informed account continuity: existing material, substantive follow-ups and reader questions can guide the next draft. Its cited [introductory case](https://x.com/gkxspace/status/1968183340026237285) and [answer to a reader's acquisition question](https://x.com/gkxspace/status/1970140112265818310) motivate testable editorial choices, not causal claims about growth. Self-reported follower gains and later cumulative views do not establish an optimal cadence. The writer therefore accepts optional account context, compares covered angles, and keeps feedback interpretation separate from publication or scheduling.
+
+The repository includes synthetic source records, a portable topic pack, two Chinese draft examples, deterministic helper tests, and behavior/routing cases. These support reproducibility but do not establish baseline improvement, platform acceptance, follower growth, or successful live publication. No growth statistic from a reference project is imported as a promise.
 
 ## Operational design influences
 

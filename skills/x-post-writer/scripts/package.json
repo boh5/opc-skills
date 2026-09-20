@@ -1,0 +1,8 @@
+{
+  "name": "opc-x-post-check",
+  "version": "0.3.0",
+  "private": true,
+  "type": "module",
+  "engines": {"node": ">=18"},
+  "dependencies": {"twitter-text": "3.1.0"}
+}

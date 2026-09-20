@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OPC editorial topic pack v1",
+  "type": "object",
+  "required": ["schema_version", "run_id", "generated_at", "mode", "window", "language", "audience", "status", "coverage", "topics", "gaps"],
+  "properties": {
+    "schema_version": {"const": "opc-topic-pack/v1"},
+    "run_id": {"$ref": "#/$defs/text"},
+    "generated_at": {"type": "string", "format": "date-time"},
+    "mode": {"enum": ["live", "supplied", "fixture"]},
+    "selection_mode": {"enum": ["standard", "conversation_first"]},
+    "window": {
+      "type": "object", "required": ["start", "end"],
+      "properties": {"start": {"type": "string", "format": "date-time"}, "end": {"type": "string", "format": "date-time"}},
+      "additionalProperties": false
+    },
+    "language": {"$ref": "#/$defs/text"},
+    "audience": {"$ref": "#/$defs/text"},
+    "status": {"enum": ["complete", "partial", "blocked", "no_update"]},
+    "coverage": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object", "required": ["lane", "status", "note"],
+        "properties": {"lane": {"$ref": "#/$defs/text"}, "status": {"enum": ["checked", "limited", "unavailable", "not_used"]}, "note": {"type": "string"}},
+        "additionalProperties": false
+      }
+    },
+    "topics": {"type": "array", "items": {"$ref": "#/$defs/topic"}},
+    "gaps": {"$ref": "#/$defs/strings"}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "text": {"type": "string", "minLength": 1, "pattern": "\\S"},
+    "strings": {"type": "array", "items": {"$ref": "#/$defs/text"}, "uniqueItems": true},
+    "date": {"anyOf": [{"type": "null"}, {"type": "string", "format": "date"}, {"type": "string", "format": "date-time"}]},
+    "url": {"type": "string", "format": "uri", "pattern": "^https?://"},
+    "source": {
+      "type": "object", "required": ["id", "url", "publisher", "kind", "published_at", "observed_at", "access", "locator", "evidence"],
+      "properties": {
+        "id": {"$ref": "#/$defs/text"}, "url": {"$ref": "#/$defs/url"}, "publisher": {"$ref": "#/$defs/text"},
+        "kind": {"enum": ["primary", "reporting", "community"]}, "published_at": {"$ref": "#/$defs/date"},
+        "observed_at": {"type": "string", "format": "date-time"}, "access": {"enum": ["full", "partial", "snippet", "unavailable", "supplied"]},
+        "locator": {"$ref": "#/$defs/text"}, "evidence": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "claim": {
+      "type": "object", "required": ["id", "text", "kind", "source_ids", "publishable", "caveat"],
+      "properties": {
+        "id": {"$ref": "#/$defs/text"}, "text": {"$ref": "#/$defs/text"}, "kind": {"enum": ["fact", "attributed", "inference", "unverified"]},
+        "source_ids": {"$ref": "#/$defs/strings"}, "publishable": {"type": "boolean"}, "caveat": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "metric": {
+      "type": "object", "required": ["source_id", "name", "value", "observed_at", "scope"],
+      "properties": {
+        "source_id": {"$ref": "#/$defs/text"}, "name": {"$ref": "#/$defs/text"}, "value": {"type": "number", "minimum": 0},
+        "observed_at": {"type": "string", "format": "date-time"}, "scope": {"$ref": "#/$defs/text"}
+      },
+      "additionalProperties": false
+    },
+    "discussion": {
+      "type": "object", "required": ["status", "summary", "source_ids", "metrics"],
+      "properties": {
+        "status": {"enum": ["observed", "potential", "unknown"]}, "summary": {"type": "string"},
+        "source_ids": {"$ref": "#/$defs/strings"}, "metrics": {"type": "array", "items": {"$ref": "#/$defs/metric"}}
+      },
+      "additionalProperties": false
+    },
+    "media": {
+      "type": "object", "required": ["url", "credit", "rights", "usage"],
+      "properties": {
+        "url": {"$ref": "#/$defs/url"}, "credit": {"$ref": "#/$defs/text"},
+        "rights": {"enum": ["own", "licensed", "permission", "unknown"]}, "usage": {"enum": ["link_only", "attach_allowed"]}
+      },
+      "additionalProperties": false
+    },
+    "topic": {
+      "type": "object", "required": ["id", "event_key", "title", "category", "decision", "event_date", "latest_development_at", "freshness", "why_now", "audience_value", "angle", "sources", "claims", "discussion", "caveats"],
+      "properties": {
+        "id": {"$ref": "#/$defs/text"}, "event_key": {"$ref": "#/$defs/text"}, "title": {"$ref": "#/$defs/text"},
+        "category": {"enum": ["news", "demo", "discussion", "analysis"]}, "decision": {"enum": ["ready", "watch", "skip"]},
+        "event_date": {"$ref": "#/$defs/date"}, "latest_development_at": {"$ref": "#/$defs/date"}, "freshness": {"enum": ["in_window", "new_development", "old", "unknown"]},
+        "why_now": {"$ref": "#/$defs/text"}, "audience_value": {"$ref": "#/$defs/text"}, "angle": {"$ref": "#/$defs/text"},
+        "sources": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/source"}},
+        "claims": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/claim"}},
+        "discussion": {"$ref": "#/$defs/discussion"},
+        "recommended_action": {"enum": ["reply", "quote", "standalone"]},
+        "conversation_target_source_id": {"$ref": "#/$defs/text"},
+        "caveats": {"$ref": "#/$defs/strings"},
+        "media": {"type": "array", "items": {"$ref": "#/$defs/media"}}
+      },
+      "additionalProperties": false
+    }
+  }
+}

@@ -5,6 +5,7 @@ OPC Skills accepts focused changes that improve a repeatable one-person-company 
 ## Design rules
 
 - Keep every `skills/<name>/` directory independently useful. Do not require another Skill, a private path, a paid provider, or a shared root reference to perform the baseline task.
+- An explicit multi-stage workflow may consume another Skill's evidence contract: `x-post-writer` edits supplied evidence independently and uses `ai-tech-topic-scout` for missing current material. Document paired installation and missing-dependency behavior; never assume the host auto-installs or invokes a sibling.
 - Put task instructions in `SKILL.md`. Add a Skill-local `references/` file only when detailed material should be loaded conditionally.
 - Add `scripts/` only for deterministic, repeated logic that is safer or clearer as code. Do not add empty directories or wrappers around external validators.
 - Separate observed facts, first-party measurements, third-party estimates, claims, inference, and unknowns.
@@ -34,3 +35,5 @@ jq -c . evals/routing.jsonl >/dev/null
 ```
 
 Then run Skill Creator validation for each Skill, Plugin Creator validation for the repository, and the targeted behavior cases described in [evals/README.md](evals/README.md). A change is not release-ready if any `must_pass`, critical-failure, tool-policy, or routing gate fails.
+
+The editorial helpers have deterministic tests documented there. These tests check contracts and text formatting, not source truth, model behavior, or audience growth. Keep generated dependencies out of the repository; retain the X helper's lockfile for reproducible installation.

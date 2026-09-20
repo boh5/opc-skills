@@ -1,0 +1,4 @@
+interface:
+  display_name: "X Post Writer"
+  short_description: "Find a worthwhile X contribution and write it in my voice"
+  default_prompt: "Use $x-post-writer to prepare the next worthwhile contribution for my Chinese X account, choosing a post, reply or quote to fit my topic and readers, and deliver the finished copy with an actual image without publishing."

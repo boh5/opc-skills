@@ -1,0 +1,75 @@
+{
+  "schema_version": "opc-topic-pack/v1",
+  "run_id": "synthetic-editorial-20260916-01",
+  "generated_at": "2026-09-16T10:00:00+08:00",
+  "mode": "fixture",
+  "selection_mode": "standard",
+  "window": {"start": "2026-09-14T10:00:00+08:00", "end": "2026-09-16T10:00:00+08:00"},
+  "language": "zh-CN",
+  "audience": "Curious Chinese-speaking non-specialists; synthetic evaluation only",
+  "status": "complete",
+  "coverage": [
+    {"lane": "supplied announcements", "status": "checked", "note": "Synthetic Records A and C; not live page reads."},
+    {"lane": "supplied community", "status": "checked", "note": "Two fictional comments only."},
+    {"lane": "X", "status": "checked", "note": "Synthetic supplied X-style conversation record only; no live X access or measurements."}
+  ],
+  "gaps": ["All evidence is synthetic; not current news or independently tested functionality."],
+  "topics": [
+    {
+      "id": "cedar-preview",
+      "event_key": "cedar:invited-canada-preview:2026-09-15",
+      "title": "Cedar announces a limited free preview",
+      "category": "news",
+      "decision": "ready",
+      "event_date": "2026-09-15T08:00:00+08:00",
+      "latest_development_at": "2026-09-15T08:00:00+08:00",
+      "freshness": "in_window",
+      "why_now": "The original announcement falls in the simulated window; translated coverage is the same event.",
+      "audience_value": "Understand who can actually use a free preview.",
+      "angle": "Free does not mean universally available; explain eligibility before the headline.",
+      "sources": [
+        {
+          "id": "cedar-primary", "url": "https://example.invalid/cedar/preview", "publisher": "Synthetic Cedar product team",
+          "kind": "primary", "published_at": "2026-09-15T08:00:00+08:00", "observed_at": "2026-09-16T09:40:00+08:00",
+          "access": "supplied", "locator": "Fixture Record A", "evidence": "Free preview for invited teams in Canada; 20 requests/day. No worldwide or individual-access date announced."
+        },
+        {
+          "id": "cedar-community", "url": "https://x.com/synthetic_cedar/status/1234567890123456789", "publisher": "Synthetic public community",
+          "kind": "community", "published_at": "2026-09-16T08:30:00+08:00", "observed_at": "2026-09-16T09:50:00+08:00",
+          "access": "supplied", "locator": "Fixture Record E: two supplied comments", "evidence": "One comment welcomes the preview; another asks about individual eligibility outside Canada."
+        }
+      ],
+      "claims": [
+        {"id": "cedar-access", "text": "Cedar says its free preview is limited to invited teams in Canada and 20 requests per day.", "kind": "attributed", "source_ids": ["cedar-primary"], "publishable": true, "caveat": "Preview, region, team invitation, and daily quota must remain visible."},
+        {"id": "cedar-date", "text": "The announcement supplies no worldwide release date.", "kind": "fact", "source_ids": ["cedar-primary"], "publishable": true, "caveat": "As of the supplied announcement, not an independently verified future promise."}
+      ],
+      "discussion": {
+        "status": "observed", "summary": "Two supplied community comments address eligibility; this is not X-wide discussion.",
+        "source_ids": ["cedar-community"],
+        "metrics": [{"source_id": "cedar-community", "name": "supplied_comments", "value": 2, "observed_at": "2026-09-16T09:50:00+08:00", "scope": "Only two fictional comments included in Record E; not total engagement."}]
+      },
+      "recommended_action": "reply",
+      "conversation_target_source_id": "cedar-community",
+      "caveats": ["First-party access claim, not personally tested.", "Invited teams in Canada only; preview; 20 requests/day."]
+    },
+    {
+      "id": "lumen-demo", "event_key": "lumen:photo-animation-announcement:2026-09-16",
+      "title": "Lumen creator describes a photo-to-animation demonstration", "category": "demo", "decision": "ready",
+      "event_date": "2026-09-16T07:00:00+08:00", "latest_development_at": "2026-09-16T07:00:00+08:00", "freshness": "in_window",
+      "why_now": "The creator's announcement falls within the simulated window.",
+      "audience_value": "Notice a creative demonstration while understanding its missing evidence.",
+      "angle": "A described demonstration is interesting, but is not a speed or reliability test.",
+      "sources": [
+        {"id": "lumen-primary", "url": "https://example.invalid/lumen/demo", "publisher": "Synthetic Lumen creator", "kind": "primary", "published_at": "2026-09-16T07:00:00+08:00", "observed_at": "2026-09-16T09:45:00+08:00", "access": "supplied", "locator": "Fixture Record C; announcement text only", "evidence": "Author describes a photo-to-short-animation demo. No playable video, time, failures, pricing, or availability supplied."}
+      ],
+      "claims": [
+        {"id": "lumen-announcement", "text": "The creator announced a demonstration of turning a photo into a short animation.", "kind": "attributed", "source_ids": ["lumen-primary"], "publishable": true, "caveat": "Only the announcement is supplied; no direct video observation or personal test."},
+        {"id": "lumen-unknowns", "text": "The supplied announcement does not state generation time or report failed attempts.", "kind": "fact", "source_ids": ["lumen-primary"], "publishable": true, "caveat": "Absence of this information in the supplied announcement, not proof no tests exist."},
+        {"id": "lumen-speed-rumor", "text": "It reliably makes a film in ten seconds.", "kind": "unverified", "source_ids": [], "publishable": false, "caveat": "Unsupported claim; exclude."}
+      ],
+      "discussion": {"status": "potential", "summary": "A possible discussion angle is what makes a demo convincing; no engagement measurements supplied.", "source_ids": [], "metrics": []},
+      "caveats": ["Author announcement only; no direct viewing or personal testing.", "Generation duration and failure rate unknown."],
+      "media": [{"url": "https://example.invalid/lumen/demo", "credit": "Synthetic Lumen creator", "rights": "unknown", "usage": "link_only"}]
+    }
+  ]
+}

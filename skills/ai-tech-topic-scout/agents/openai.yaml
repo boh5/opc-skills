@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI & Tech Topic Scout"
+  short_description: "Find sourced AI and tech editorial topics"
+  default_prompt: "Use $ai-tech-topic-scout to find fresh AI/technology topics and active discussions for a Chinese X account, including concrete reply opportunities when available."

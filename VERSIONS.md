@@ -4,7 +4,9 @@ OPC Skills uses semantic versions for the published suite and for each independe
 
 | Component | Version | Notes |
 | --- | --- | --- |
-| Plugin suite | `0.4.0` | Adds a broad product-opportunity entry Skill alongside the five SEO research Skills |
+| Plugin suite | `0.5.0` | Adds a source-backed AI/tech discovery-to-X-draft workflow; version metadata is not a published release |
+| `ai-tech-topic-scout` | `0.6.0` | Selects a concrete reader question or contribution as well as verified facts, preserving open post/reply choices |
+| `x-post-writer` | `0.13.0` | Simplifies Chinese drafting and adds one isolated language-editing pass after Humanizer when delegation is available, with author checks before final text and imagery |
 | `product-opportunity-finder` | `0.1.0` | Discovers understandable product opportunities from current social, community, product, and market signals, audits alternatives and success paths, and returns a ranked entry decision |
 | `seo-idea-finder` | `0.3.0` | Adds source-record discovery, semantic current-alternative audits, fresh reframe checks, evidence-led replenishment, and product-first delivery without quota filler |
 | `site-opportunity-scout` | `0.2.0` | Site, operator, acquisition, and reproducibility audit |
