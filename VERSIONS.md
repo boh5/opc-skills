@@ -6,7 +6,7 @@ OPC Skills uses semantic versions for the published suite and for each independe
 | --- | --- | --- |
 | Plugin suite | `0.5.0` | Adds a source-backed AI/tech discovery-to-X-draft workflow; version metadata is not a published release |
 | `ai-tech-topic-scout` | `0.7.0` | Prioritizes material for sharp judgments, informative facts and worthwhile discoveries, preserving support and inference boundaries |
-| `x-post-writer` | `0.16.0` | Adds a portable full-color expressive doodle reference and concrete art direction while keeping images optional and scenes topic-specific |
+| `x-post-writer` | `0.18.1` | Records the user's preferred opinion-first A drafts as contextual style references without transferring their facts or experiences |
 | `product-opportunity-finder` | `0.1.0` | Discovers understandable product opportunities from current social, community, product, and market signals, audits alternatives and success paths, and returns a ranked entry decision |
 | `seo-idea-finder` | `0.3.0` | Adds source-record discovery, semantic current-alternative audits, fresh reframe checks, evidence-led replenishment, and product-first delivery without quota filler |
 | `site-opportunity-scout` | `0.2.0` | Site, operator, acquisition, and reproducibility audit |

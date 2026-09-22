@@ -2,7 +2,7 @@
 name: x-post-writer
 description: Choose and draft worthwhile X posts, replies, quote commentary, and short threads for an account, adding images when they serve the content. Use for Chinese AI/technology content, a supplied thought or experience, a current discussion, or the next contribution for account growth. Select the action when the user leaves it open. Produces drafts, not account operations or scheduling.
 metadata:
-  version: "0.16.0"
+  version: "0.18.1"
 ---
 
 # X Post Writer
@@ -36,23 +36,27 @@ metadata:
 | 引用 | 有必要把特定原帖带给自己的读者，并增加自己的内容。 |
 | skip | 找不到值得增加的内容，或已说过同样的话。 |
 
-回复／引用必须有读到或完整提供的原帖和精确 status URL。结合可见回复判断还有什么可加；粉丝多或点赞多本身不够。无法读取的部分要说清，不能声称比较过未看的讨论。回复应对得上这条原帖，不能到处粘贴。
+回复／引用必须有读到或完整提供的原帖和精确 status URL。结合可见回复判断还有什么可加；粉丝多或点赞多本身不够。无法读取的部分要说清，不能声称比较过未看的讨论。按 [接话方式](references/editorial.md#回复是在接话) 区分分享、求助、庆祝和争论，回复应对得上这条原帖。
 
 上游推荐是建议；按当前要求和材料采用，改动时简短说明原因。scout 的 `standalone` 对应 `single` 或 `thread`。没有实际回复对象，仍可写独立观点，不能编造对象。
 
 ## 写成日常说话的中文
 
-读 [editorial.md](references/editorial.md)，按照其中的口语方法写。用户提供的是意思，除非要求保留原话，否则正式提纲也要重新用日常话讲。第一人称体现在选择和判断里，不是每句都加“我觉得”。
+读 [editorial.md](references/editorial.md)。写中文正文前，从 [语气样例](references/voice-examples.md) 选两三条交流目的相近而句式不同的例子；用户认可稿优先。把样例的上下文和正文也交给最后的语言编辑。样例只提供表达参照，不提供这次的事实、经历或立场，不要求写成同样长短。
 
-先把具体的意思说完整，再考虑删字。不要给短帖套“表明立场—举例—总结原则”的结构，也不要把观点统一写成试用计划。新闻、教程、资源推荐等明确任务仍按用户要求完成。需要中文 X 实例时再读 [chinese-x-patterns.md](references/chinese-x-patterns.md)，不照搬作者句式或经历。
+从这次要说的意思直接写正文，研究笔记中的分析不用逐项搬进来。用户提供的是意思，除非要求保留原话，否则正式提纲也要重新用日常话讲。第一人称体现在选择和判断里，不是每句都加“我觉得”。
+
+独立观点帖默认采用用户选中的 [A 组写法](references/voice-examples.md#用户偏好的观点帖写法)：第一句说清具体判断或取舍，再补让人听懂的理由；事实、发现也可直接从最值得说的结果开头。按 [开头怎么说](references/editorial.md#开头怎么说) 处理，不把每种内容都改成先下结论。
+
+先把具体的意思说完整，再考虑删字。观点在前也不等于套“表明立场—举例—总结原则”的结构，说清就停，不必另作总结，也不要把观点统一写成试用计划。新闻、教程、资源推荐等明确任务仍按用户要求完成。需要中文 X 实例时再读 [chinese-x-patterns.md](references/chinese-x-patterns.md)，不照搬作者句式或经历。
 
 外部事实有来源，个人经历有用户提供的依据；作者的判断可以直接表达。保留会改变含义的限制，把厂商说法、设想和已发生的事分清。正文默认不附研究链接；借用具体成果要自然署名，资料 URL 放在正文外。用户要分享可访问资源时保留链接。详见 [署名与链接](references/editorial.md#attribution-and-added-value)。
 
 ## 编辑正文，再决定是否配图
 
-读并应用本地 [Humanizer](references/humanizer.md)，采用个人写作模式，保留具体判断和语气。它是未改动的 `blader/humanizer` 3.0.0：[原始提交](https://github.com/blader/humanizer/blob/9862685f575c65a8247f90369951df1b3416e3d6/SKILL.md)、[MIT 许可](references/humanizer-LICENSE.txt)。它处理正文；配图判断和复核仍按本 Skill 执行。
+读本地 [Humanizer](references/humanizer.md)，将它用于 [一次语言编辑](references/editorial.md#语言编辑)，采用个人写作模式。不要先完整 Humanizer 重写、再另做一轮重写；编辑同时参照语气样例和本次相关规则，只改实际问题，自然的句子可以原样保留。Humanizer 是未改动的 `blader/humanizer` 3.0.0：[原始提交](https://github.com/blader/humanizer/blob/9862685f575c65a8247f90369951df1b3416e3d6/SKILL.md)、[MIT 许可](references/humanizer-LICENSE.txt)。配图判断和复核仍按本 Skill 执行。
 
-Humanizer 之后按 [语言编辑](references/editorial.md#语言编辑) 编辑一次正文。宿主支持且允许子代理时，由一个不继承写作上下文的语言编辑完成；否则由当前 Agent 用同一编辑任务完成，不伪称独立审阅。编辑负责把话说顺，同时保住最有分量的判断、事实或发现；写作者核对原意和事实。中间稿留在本次运行里，不向用户堆版本。
+宿主支持且允许子代理时，由一个不继承写作上下文的语言编辑完成；否则由当前 Agent 用同一编辑任务完成，不伪称独立审阅。保住有分量的主张和必要细节，不要求正文讲完研究笔记的所有理由。写作者核对原意和事实，中间稿留在本次运行里，不向用户堆版本。
 
 正文确定后，按 [x-format.md](references/x-format.md) 用现有 `scripts/check-post.mjs` 或平台检查最终字符串。没有可用检查器就如实标为未验证。超长时先缩小想说的内容，不能删掉必要关系来硬塞；任何正文修改后重验。
 
