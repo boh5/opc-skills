@@ -2,7 +2,7 @@
 name: x-post-writer
 description: Choose and draft worthwhile X posts, replies, quote commentary, and short threads for an account, adding images when they serve the content. Use for Chinese AI/technology content, a supplied thought or experience, a current discussion, or the next contribution for account growth. Select the action when the user leaves it open. Produces drafts, not account operations or scheduling.
 metadata:
-  version: "0.22.0"
+  version: "0.23.0"
 ---
 
 # X Post Writer
@@ -50,7 +50,7 @@ metadata:
 
 观点稿保留用户喜欢的 [A 组方向](references/voice-examples.md#用户偏好的观点帖写法)：先说出自己对这件事的具体判断。用户没有提供结论，也可以基于材料提出一个愿意辩护的主张；不必靠经历来证明有资格表态。作品分享、具体发现、反应、问题和经历可以直接开口，不先加“我更看重什么”。按 [开头怎么说](references/editorial.md#开头怎么说) 处理。
 
-先把具体的意思说完整，再考虑删字。观点在前也不等于套“表明立场—举例—总结原则”的结构，说清就停，不必另作总结，也不要把观点统一写成试用计划。新闻、教程、资源推荐等明确任务仍按用户要求完成。需要中文 X 实例时再读 [chinese-x-patterns.md](references/chinese-x-patterns.md)，不照搬作者句式或经历。
+先把具体的意思说完整，再考虑删字。观点在前也不等于套“表明立场—举例—总结原则”的结构。说到想分享的地方就可以停，不必把读者可能追问的事都提前答完。结尾有新条件、下一步或反转就留；只是换句话重说前面的好处，就收掉。也不要把观点统一写成试用计划。新闻、教程、资源推荐等明确任务仍按用户要求完成。需要中文 X 实例时再读 [chinese-x-patterns.md](references/chinese-x-patterns.md)，不照搬作者句式或经历。
 
 外部事实有来源；授权创作的故事按创作处理，作者的判断可以直接表达。保留会改变含义的限制，把厂商说法、设想和已发生的事分清。正文默认不附研究链接；借用具体成果要自然署名，资料 URL 放在正文外。用户要分享可访问资源时保留链接。详见 [署名与链接](references/editorial.md#attribution-and-added-value)。
 
