@@ -25,7 +25,7 @@ Prefer a safe stdin stream or an already authorized JSON file for quotes, multil
 
 The simple file format is `{"posts": ["first complete post", "second complete post"]}`. The helper also accepts `{"schema_version":"opc-x-drafts/v1","run_id":"...","drafts":[{"topic_id":"...","format":"single","posts":["..."],"source_urls":["https://..."],"status":"draft"}]}`. A `quote` draft also needs `quote_url`; a `reply` draft needs `reply_url`; a `thread` needs at least two posts.
 
-`source_urls` must be an array of HTTP(S) URLs without credentials, and may be `[]` for an original opinion or approved personal account with no external URLs. Keep provenance in review/context notes. This is an input-format allowance, not a fact-checking exemption; exact reply/quote targets remain required.
+`source_urls` must be an array of HTTP(S) URLs without credentials, and may be `[]` for an original opinion, authorized narrative fiction or approved personal account with no external URLs. Keep provenance in review/context notes. This is an input-format allowance, not a fact-checking exemption; exact reply/quote targets remain required.
 
 It returns weighted length and validity for each post. Exit `0` means all nonempty standard-post texts pass the parser, `1` means a length/content check failed, and `2` means malformed input, unavailable dependencies or a read error. The helper never silently truncates or rewrites the text. Parsing success is not fact-checking, media validation, account entitlement or platform acceptance.
 

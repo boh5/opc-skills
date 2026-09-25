@@ -2,6 +2,18 @@
 
 Read when Chinese drafting needs examples. These observations inform editorial choices; they are not a formula or a fresh-topic source pack. The posts were inspected on X on 2026-09-19, including native text, visible interaction counts and selected complete post pages. Counts are snapshots with unequal exposure windows. Popularity does not establish quality, truth or what caused the response. Technical/product claims in these posts were not independently validated for reuse.
 
+## Follow-up observation, 2026-09-24
+
+Chrome sampling read 29 distinct post cards from dotey, vista8, HiTw93, tualatrix, vikingmute and gefei55, then six full post pages and selected replies. This is a convenience sample of established Chinese AI/developer accounts, not a representative study of Chinese X or proof of what makes posts popular. Some cards were truncated; the observations below use full inspected posts. Product results remain author reports.
+
+- [Viking on failure stories](https://x.com/vikingmute/status/2101316812860428516): a concrete claim about ten small apps drew disagreement about concentrating on one. Readers disputed an actual premise, rather than answering a generic closing poll.
+- [Tw93's tested-app list](https://x.com/HiTw93/status/2102559208520782024): continuing work and a specific invitation drew app suggestions and reports. The artifact and its progress supplied the reason to post; an added industry lesson was unnecessary.
+- [GeFei's phone budget](https://x.com/gefei55/status/2102950127640191480): an ordinary preference had a stated connection to his own needs and product-pricing experience. This shows one way to make a small opinion specific; it does not require the current owner to supply an equivalent experience.
+- [Vista's report of a lunch conversation](https://x.com/vista8/status/2102710389092028532): workload and review details drew questions about testing and doubts about representativeness. Those observed responses do not establish the anecdote as an industry trend.
+- [Dotey's 3D project](https://x.com/dotey/status/2102940980379017293): enthusiasm, an actual artifact and acknowledged iteration drew questions about reproduction and cost. The author's [follow-up](https://x.com/dotey/status/2102994911171903830) answered them. Neither the finished demo nor the reaction proves a universal model ranking.
+
+The editorial inference is to start open briefs with something concrete worth saying, and vary the social purpose. Do not reduce these posts to a universal hook/reason/lesson template. User-rejected drafts about resize controls, support workload and learning by exercises remain rejected: specific nouns and fluent sentences did not make their invented preferences interesting. Real posted replies also vary in quality; publication is not a certificate of natural writing.
+
 ## Observed choices worth understanding
 
 | Example | Observed writing choice | How it helps this Skill |
@@ -31,7 +43,7 @@ A separate read-only sample on 2026-09-19 inspected six posts from four authors 
 
 The sixth sampled parent was the developer/paying-user illustration above: the author [replied that their own income was affected](https://x.com/tualatrix/status/2100933454066307278). That is a personal report, not industry data. All six are convenience samples from established accounts; only selected relevance-ranked replies were read. Prior relationships, automation and follow conversions were unknown. These examples justify possible editorial choices, not claims that the choices caused growth.
 
-Distinguish why someone can respond to this post from why they might return to the account. The former needs a particular contribution; the latter needs a recognizable continuing interest, useful follow-ups or work worth tracking. Do not force a series, promise future experiments or invent a biography to manufacture that expectation.
+Distinguish why someone can respond to this post from why they might return to the account. The former needs a particular contribution; the latter needs a recognizable continuing interest, useful follow-ups or work worth tracking. Do not force a series or promise future experiments to manufacture that expectation. Narrative fiction follows the account's creative permission and is not factual biography or a commitment to future work.
 
 ## Apply the observations without imitating a person
 
