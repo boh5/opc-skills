@@ -2,7 +2,7 @@
 name: x-post-writer
 description: Choose and draft worthwhile X posts, replies, quote commentary, and short threads for an account, adding images when they serve the content. Use for Chinese AI/technology content, a supplied thought or experience, a current discussion, or the next contribution for account growth. Select the action when the user leaves it open. Produces drafts, not account operations or scheduling.
 metadata:
-  version: "0.23.0"
+  version: "0.24.0"
 ---
 
 # X Post Writer
