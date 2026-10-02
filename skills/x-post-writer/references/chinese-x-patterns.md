@@ -2,6 +2,22 @@
 
 Read when Chinese drafting needs examples. These observations inform editorial choices; they are not a formula or a fresh-topic source pack. The posts were inspected on X on 2026-09-19, including native text, visible interaction counts and selected complete post pages. Counts are snapshots with unequal exposure windows. Popularity does not establish quality, truth or what caused the response. Technical/product claims in these posts were not independently validated for reuse.
 
+## Participation comparison, 2026-10-02
+
+The user supplied [AI Fun's model-rating invitation](https://x.com/ai_funss/status/2105337659497533462). After direct X fetching and Chrome control failed, public FxTwitter JSON returned the complete post text and counters for this post and six comparison posts below. Images and reply bodies were not inspected in this pass. These are convenience samples of different sizes and ages, not an engagement experiment; source claims are the authors' claims, not verified capabilities or the account owner's experiences.
+
+| Post | Observed participation choice |
+| --- | --- |
+| [AI Fun](https://x.com/ai_funss/status/2105337659497533462) | Gives a short favorable assessment with a speed complaint, then invites a 1–5 rating. A reader can contribute a number without writing a review. |
+| [Tw93's tested-app list](https://x.com/HiTw93/status/2102559208520782024) | Offers an existing list and asks readers to submit missing apps. The contribution has a concrete object and purpose. His promise to test additions belongs to him; it is not a reusable promise for this account. |
+| [Dotey on Pi compaction](https://x.com/dotey/status/2088330456022311109) | Identifies one unresolved mechanism after explaining his reading. The question seeks information rather than broad agreement. |
+| [Viking on independent development](https://x.com/vikingmute/status/2101316812860428516) | States a contestable income/work comparison without adding a question. The premise itself leaves room for counterexamples. |
+| [Vista on Jev](https://x.com/vista8/status/2100775218830815554) | Says the call worked but a concrete use is still missing, leaving an application gap after sharing his understanding. This does not require copying the long explanatory format. |
+| [Guizang's Flowith post](https://x.com/op7418/status/1911675030536376609) | Couples a product story with a membership giveaway. Rewards and delivery obligations distinguish this from an ordinary discussion prompt. |
+| [Andy Stewart's input-method post](https://x.com/manateelazycat/status/2014189869539766579) | Asks readers to signal interest for an installation package and specifies a platform audience. The low-effort signal also depends on a real distribution operation. |
+
+The editorial inference is to choose a meaningful, easy first contribution: a rating, choice, example, addition or counterargument. Ratings and choices are not inherently empty engagement bait. Neither are they mandatory. Do not infer algorithm weights or causal growth from counters, and do not import giveaways, resource delivery or future-work promises merely because they appear in a reference. The reusable writing guidance and synthetic contrasts are in [participation.md](participation.md).
+
 ## Follow-up observation, 2026-09-24
 
 Chrome sampling read 29 distinct post cards from dotey, vista8, HiTw93, tualatrix, vikingmute and gefei55, then six full post pages and selected replies. This is a convenience sample of established Chinese AI/developer accounts, not a representative study of Chinese X or proof of what makes posts popular. Some cards were truncated; the observations below use full inspected posts. Product results remain author reports.
