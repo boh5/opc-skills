@@ -2,7 +2,7 @@
 name: x-post-writer
 description: Choose and draft worthwhile X posts, replies, quote commentary, and short threads for an account, adding images when they serve the content. Use for Chinese AI/technology content, a supplied thought or experience, a current discussion, or the next contribution for account growth. Select the action when the user leaves it open. Produces drafts, not account operations or scheduling.
 metadata:
-  version: "0.25.0"
+  version: "0.26.0"
 ---
 
 # X Post Writer
@@ -16,8 +16,8 @@ metadata:
 | 内容 | 要找到什么 |
 | --- | --- |
 | 暴论 | 有棱角、讲得出理由的判断：明确赞成什么、反对什么，愿意为哪个取舍辩护。力度来自主张，不靠夸大事实或骂人。 |
-| 事实 | 有信息量的具体事实：一个结果、对照或条件，能纠正误解、改变选择，或把问题说透。准确只是底线，普通功能列表还不够。 |
-| 发现 | 值得告诉别人的观察：容易漏掉的细节、有用的新用法、几份材料之间的联系。说明发现了什么、为什么有用，区分观察与待验证的设想。 |
+| 事实 | 想让别人看到的具体结果、对照或条件。结果本身可以有分量，不要求每次追加一个教训。 |
+| 发现 | 自己注意到、觉得值得告诉别人的东西或用法。直接说它哪里吸引自己；区分观察与待验证的设想。 |
 
 用户明确给定意思或形式就照做。开放选题读 [选材与对照](references/angles.md)：从账号方向里细化一个值得争论的取舍、有用的认识或具体反应，自主形成观点；需要当前话题时再找公开讨论与材料。可以写不依赖新闻或经历的常青观点，也可以用故事、场景或对话把它讲明白。用户提供的经历可用，但不要求用户先做事、做实验、讲故事或填素材表。日常调度应能直接得到草稿或有具体原因的 skip／blocked。
 
@@ -42,25 +42,21 @@ metadata:
 
 上游推荐是建议；按当前要求和材料采用，改动时简短说明原因。scout 的 `standalone` 对应 `single` 或 `thread`。没有实际回复对象，仍可写独立观点，不能编造对象。
 
-## 写成日常说话的中文
+## 从材料直接成稿
 
-读 [editorial.md](references/editorial.md)。需要表达参照时，按这次是在分享、接话、反驳、提问还是讲经历，从 [语气样例](references/voice-examples.md) 选一条真正相近的例子；没有相近的就不用硬选。用户提供的当前语气要求优先，历史认可稿只在适用时参考，不把 A 组套到每条。用过的样例连同上下文交给语言编辑，只借表达，不迁入它的事实、经历、立场和关系。
+调用方按 [editorial.md](references/editorial.md) 处理意图、材料与事实边界。成稿作者使用简短的 [作者任务](references/author.md)，按交流场合选少量 [语气样例](references/voice-examples.md)。先看原帖在说什么、哪一点使自己想接话；写独立帖则想清楚自己此刻想说什么。可以有偏好、不满、好奇，也可以还没想完；用户不需要先提供经历。
 
-从这次要说的意思直接写正文，研究笔记中的分析不用逐项搬进来。用户提供的是意思，除非要求保留原话，否则正式提纲也要重新用日常话讲。第一人称体现在选择和判断里，不是每句都加“我觉得”。
+**第一稿就从干净上下文写。** 宿主支持且允许子代理时，按 [独立成稿](references/editorial.md#独立成稿) 委派一次：交原始材料、用户要求、事实边界和作者任务，作者直接选说法并成稿。不要由研究 Agent 先写点评，再让子代理只润色。用户指定的意思必须保留；上游 Agent 的 `angle`、受众价值、提纲和旧草稿都不是用户立场，不能作为“核心意思不可改变”锁给作者。事实不能改，但不意味着材料包的每句话都要写进正文。作者收到这个委派后直接完成，不再套娃委派，也不用再读调用方的选题和验收规程。
 
-观点稿保留用户喜欢的 [A 组方向](references/voice-examples.md#用户偏好的观点帖写法)：先说出自己对这件事的具体判断。用户没有提供结论，也可以基于材料提出一个愿意辩护的主张；不必靠经历来证明有资格表态。作品分享、具体发现、反应、问题和经历可以直接开口，不先加“我更看重什么”。按 [开头怎么说](references/editorial.md#开头怎么说) 处理。
+有观点就尽早说出来，保留用户喜欢的 [A 组方向](references/voice-examples.md#用户偏好的观点帖写法)。回复、作品分享、经历和提问按各自场合开口。原帖已提供的背景不用再替它介绍一遍；一个反例、一处好笑的麻烦或一句具体追问，可以就是整条内容。长文、教程仍按用户要求写，不把所有内容压成一句段子。
 
-先把具体的意思说完整，再考虑删字。观点在前也不等于套“表明立场—举例—总结原则”的结构。说到想分享的地方就可以停，不必把读者可能追问的事都提前答完。结尾有新条件、下一步或反转就留；只是换句话重说前面的好处，就收掉。也不要把观点统一写成试用计划。新闻、教程、资源推荐等明确任务仍按用户要求完成。需要中文 X 实例时再读 [chinese-x-patterns.md](references/chinese-x-patterns.md)，不照搬作者句式或经历。
+开放选题也考虑读者能接什么话。需要征集、比较或一起玩时，读 [participation.md](references/participation.md)；完整观点可以自然结束。来源、署名和需要保留的限制按 [editorial.md](references/editorial.md#attribution-and-added-value)，默认不把核验链接塞进正文。
 
-**选题时也想读者能接什么话。** 让人报一个选择、打个分、补一个例子，或反驳一项具体判断，都可以成为帖子本身的内容。开放选题主动考虑；用户想增加互动、征集意见，或内容适合读者参与时，读 [让读者接得上话](references/participation.md)。不用等正文写完再补“你怎么看”，也不要求每帖带问题。
+## 校对，再决定是否配图
 
-外部事实有来源；授权创作的故事按创作处理，作者的判断可以直接表达。保留会改变含义的限制，把厂商说法、设想和已发生的事分清。正文默认不附研究链接；借用具体成果要自然署名，资料 URL 放在正文外。用户要分享可访问资源时保留链接。详见 [署名与链接](references/editorial.md#attribution-and-added-value)。
+作者在同一次成稿中使用本地 [Humanizer](references/humanizer.md)：先读 `Voice` 与工作方式，按实际问题查相应条目，做一次局部校对。采用个人写作模式，自然的话可以原样保留；感叹、停顿、接梗和必要的重复也能传达态度，不要求每句话新增一条事实。不另设一轮把全文改得更“完善”的润色。Humanizer 是未改动的 `blader/humanizer` 3.0.0：[原始提交](https://github.com/blader/humanizer/blob/9862685f575c65a8247f90369951df1b3416e3d6/SKILL.md)、[MIT 许可](references/humanizer-LICENSE.txt)。
 
-## 编辑正文，再决定是否配图
-
-读本地 [Humanizer](references/humanizer.md)，将它用于 [一次语言编辑](references/editorial.md#语言编辑)，采用个人写作模式。不要先完整 Humanizer 重写、再另做一轮重写；编辑同时参照语气样例和本次相关规则，只改实际问题，自然的句子可以原样保留。Humanizer 是未改动的 `blader/humanizer` 3.0.0：[原始提交](https://github.com/blader/humanizer/blob/9862685f575c65a8247f90369951df1b3416e3d6/SKILL.md)、[MIT 许可](references/humanizer-LICENSE.txt)。配图判断和复核仍按本 Skill 执行。
-
-宿主支持且允许子代理时，由一个不继承写作上下文的语言编辑完成；否则由当前 Agent 用同一编辑任务完成，不伪称独立审阅。保住有分量的主张和必要细节，不要求正文讲完研究笔记的所有理由。写作者核对原意和事实，中间稿留在本次运行里，不向用户堆版本。
+调用方复核事实、原意、署名和阅读是否顺畅；不因为作者没有沿用自己的观点就改回去。不支持委派时，当前 Agent 按同一份材料和成稿要求完成，不声称独立验证。具体边界见 [成稿复核](references/editorial.md#成稿复核)。
 
 正文确定后，按 [x-format.md](references/x-format.md) 用现有 `scripts/check-post.mjs` 或平台检查最终字符串。没有可用检查器就如实标为未验证。超长时先缩小想说的内容，不能删掉必要关系来硬塞；任何正文修改后重验。
 
